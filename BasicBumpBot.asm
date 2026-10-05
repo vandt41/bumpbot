@@ -213,6 +213,10 @@ HitLeft:
 ;		of time in 10ms intervals. Here is the general eqaution
 ;		for the number of clock cycles in the wait loop:
 ;			(((((3*ilcnt)-1+4)*olcnt)-1+4)*waitcnt)-1+16
+
+;		At 16 MHz, one waitcnt iteration takes approximately 10 ms
+;		setting Wtime = 200 produces approximately a 2-second delay. 
+;((((3*237)-1+4)*224)-1+4)*200
 ;----------------------------------------------------------------
 Wait:
 		push	waitcnt			; Save wait register
